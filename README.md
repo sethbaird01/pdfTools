@@ -29,7 +29,6 @@ Works in a similar fashion to `convert.py`, but merges all given files into a ne
 
 # Options (flags)
 
-- `-v` Verbose: Print more output while the program runs
 - `-q` Quiet mode: print nothing while running
 - `-r` Recursive mode: Traverse a folder given as argument
 
