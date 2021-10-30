@@ -1,27 +1,39 @@
-# :bulb: What's "pdfTools"?
-It's a python script that allows you to:
-* Convert `.docx` files to `.pdf`;
-* Merge `.pdf` files;
-* More feature cooming soon :hammer:
+# What's "pdfTools"?
 
-pyPdfTools use **multiproccessings** for convert files to be faster :zap: 
+A set of python scripts that allows you to:
+* Convert `.docx` files to `.pdf`
+* Merge `.pdf` files
 
-# :question: How to use "pdfTools"
 
-## :pushpin: From executable:
-* Windows:
-1. Download `windows.exe` file from [dist](https://github.com/a-tartarelli/pyPdfTools/tree/master/dist) folder 
-1. :heavy_exclamation_mark: Put it on a folder and put `.docx` and `.pdf` files that you want convert or merge in the same folder
+# Usage
 
-* Linux: 
-1. Download `linux` file from [dist](https://github.com/a-tartarelli/pyPdfTools/tree/master/dist) folder 
-1. :heavy_exclamation_mark: Put it on a folder and put `.docx` and `.pdf` files that you want convert or merge in the same folder
+## First steps
 
-* MacOS: 
-  * cooming soon :hammer:
-
-## :pushpin: From source code:
-1. `git clone https://github.com/a-tartarelli/pdfTools.git`
+1. `git clone https://github.com/sethbaird01/pdfTools && cd pdfTools`
 2. `pip install -r requirements.txt`
-3. :heavy_exclamation_mark: Put `.docx` and `.pdf` files that you want convert or merge in the same folder as `main.py`
-4. Run `main.py`
+
+## Converting `docx` files to `.pdf`
+
+`python3 convert.py file1.pdf file2.pdf ...`
+
+This will convert all specified files to their resulting `.pdf`s. Conversions will happen in FIFO order, and output files will be in the parent directory.
+
+
+## Merging `.pdf` Files
+
+`python3 merge.py -r file1.pdf file2.pdf ...`
+
+Works in a similar fashion to `convert.py`, but merges all given files into a new file `merged.pdf`
+
+
+
+# Options (flags)
+
+- `-v` Verbose: Print more output while the program runs
+- `-q` Quiet mode: print nothing while running
+- `-r` Recursive mode: Traverse a folder given as argument
+
+### Example: using flags to merge all files in a folder
+1. `python3 merge.py -r /path/to/folder`
+
+This will recursively find all .pdf files in the folder you specify, and append them all to the output file, `merged.pdf` in the parent folder. The order in which this script finds files can be found [here](https://www.geeksforgeeks.org/os-walk-python/). By default it uses `topdown=True`, meaning your tree of files will be parsed in a top-down fashion.
