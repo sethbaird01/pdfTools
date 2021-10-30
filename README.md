@@ -21,7 +21,7 @@ This will convert all specified files to their resulting `.pdf`s. Conversions wi
 
 ## Merging `.pdf` Files
 
-`python3 merge.py -r file1.pdf file2.pdf ...`
+`python3 merge.py file1.pdf file2.pdf ...`
 
 Works in a similar fashion to `convert.py`, but merges all given files into a new file `merged.pdf`
 
