@@ -31,6 +31,7 @@ Works in a similar fashion to `convert.py`, but merges all given files into a ne
 
 - `-q` Quiet mode: print nothing while running
 - `-r` Recursive mode: Traverse a folder given as argument
+- `-h` `--help` Display help message
 
 ### Example: using flags to merge all files in a folder
 1. `python3 merge.py -r /path/to/folder`
