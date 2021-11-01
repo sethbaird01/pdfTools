@@ -11,7 +11,7 @@ import argparse
 def searchWord(paths):
     word = []
     for p in paths:
-        for (dirpath, dirnames, filenames) in os.walk("./"):
+        for (dirpath, dirnames, filenames) in os.walk(p, topdown=True):
             for filename in filenames:
                 cur = os.path.join(dirpath, filename)
                 if(cur[-5:] == ".docx"):
